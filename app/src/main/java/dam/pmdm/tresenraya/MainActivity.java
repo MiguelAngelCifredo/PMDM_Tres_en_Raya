@@ -85,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
                 casillero[f][c] = turnoActual;
                 esTurno1 = !esTurno1;
                 if (++contInicio == 6) esPrimeraParte = false;
+            } else {
+                lblInfo.setText(R.string.mov_no_valido);
+                return;
             }
         } else {
             if (esPrimerClic) {
@@ -94,18 +97,27 @@ public class MainActivity extends AppCompatActivity {
                 }
             } else {
                 boolean esAdyacente = Math.abs(f - filDesde) <= 1 && Math.abs(c - colDesde) <= 1;
+
                 if (casillero[f][c] == BLANCO && esAdyacente) {
+                    // MOVIMIENTO CORRECTO
                     casillero[filDesde][colDesde] = BLANCO;
                     casillero[f][c] = turnoActual;
                     esTurno1 = !esTurno1;
                     esPrimerClic = true;
                 } else {
-                    esPrimerClic = true; // Si falla o toca la misma, deseleccionamos
+                    // MOVIMIENTO NO VÁLIDO
+                    lblInfo.setText(R.string.mov_no_valido);
+                    lblInfo.setTextColor(getResources().getColor(R.color.info, null)); // Color neutro/error
+
+                    esPrimerClic = true;
+                    actualizarTablero();
+                    return;
                 }
             }
         }
+
         detectarFinalJuego();
-        actualizarTablero(); // Refrescamos toda la interfaz tras el cambio
+        actualizarTablero();
     }
 
     private void detectarFinalJuego() {

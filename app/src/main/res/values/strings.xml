@@ -14,5 +14,5 @@
     <string name="no">NO</string>
     <string name="si">SI</string>
     <string name="gana">"GANA: "</string>
-    <string name="pierde">"PERDEDOR: "</string>
+    <string name="mov_no_valido">Movimiento no válido</string>
 </resources>
