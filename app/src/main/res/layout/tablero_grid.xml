@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.gridlayout.widget.GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tablero"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:columnCount="3"
+    app:rowCount="3">
+
+    <Button android:id="@+id/btn00" style="@style/FichaTresEnRaya" />
+    <Button android:id="@+id/btn01" style="@style/FichaTresEnRaya" />
+    <Button android:id="@+id/btn02" style="@style/FichaTresEnRaya" />
+    <Button android:id="@+id/btn10" style="@style/FichaTresEnRaya" />
+    <Button android:id="@+id/btn11" style="@style/FichaTresEnRaya" />
+    <Button android:id="@+id/btn12" style="@style/FichaTresEnRaya" />
+    <Button android:id="@+id/btn20" style="@style/FichaTresEnRaya" />
+    <Button android:id="@+id/btn21" style="@style/FichaTresEnRaya" />
+    <Button android:id="@+id/btn22" style="@style/FichaTresEnRaya" />
+
+</androidx.gridlayout.widget.GridLayout>
